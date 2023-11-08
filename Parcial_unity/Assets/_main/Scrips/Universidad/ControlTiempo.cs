@@ -47,7 +47,7 @@ public class ControlTiempo : MonoBehaviour
 
     void TerminarTemporizador()
     {
-        SceneManager.LoadScene(2);
+        //SceneManager.LoadScene(2);
     }
 
     void Update()
@@ -74,7 +74,7 @@ public class ControlTiempo : MonoBehaviour
         }
         if (!eventoOcurrido4 && tiempoPasado >= tiempoParaEstorbo4)
         {
-            Estorbos2.SetActive(true);
+            Estorbos4.SetActive(true);
             eventoOcurrido4 = true;
         }
 
@@ -87,5 +87,10 @@ public class ControlTiempo : MonoBehaviour
     public void Awake()
     {
         tiempoPasado = 0f;
+    }
+
+    public void pusartiempo()
+    {
+        tiempoPasado -= Time.deltaTime;
     }
 }

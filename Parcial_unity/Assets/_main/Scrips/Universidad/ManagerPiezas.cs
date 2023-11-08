@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
-public class ManagerPiezas : MonoBehaviour
+public class ManagerPiezas : ControlTiempo
 {
     [SerializeField] int Count = 0;
 
@@ -36,6 +36,7 @@ public class ManagerPiezas : MonoBehaviour
             imagen3.SetActive(true);
             lUZ.SetActive(true);
             Bloqueo.SetActive(false);
+            pusartiempo();
         }
 
     }
