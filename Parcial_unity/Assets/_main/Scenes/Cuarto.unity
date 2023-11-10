@@ -1572,6 +1572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3c81d25e2e5f8a4492da9e2b9972f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  contadorText: {fileID: 0}
 --- !u!1 &239731504
 GameObject:
   m_ObjectHideFlags: 0
@@ -9105,7 +9106,7 @@ GameObject:
   - component: {fileID: 1670190663}
   - component: {fileID: 1670190662}
   m_Layer: 5
-  m_Name: Text (TMP) (3)
+  m_Name: pointsBasket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
