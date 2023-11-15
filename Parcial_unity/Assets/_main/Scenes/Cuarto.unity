@@ -2610,7 +2610,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4241873536482819713}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 65e82943e48c00e48bf62b8a6751566f, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -8856,7 +8856,7 @@ GameObject:
   - component: {fileID: 1647197370}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Basket
+  m_TagString: Pelota
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
