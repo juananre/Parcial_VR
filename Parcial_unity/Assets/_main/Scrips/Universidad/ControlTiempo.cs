@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 
 public class ControlTiempo : MonoBehaviour
 {
-    [SerializeField] TMP_Text txt_contador_Tiempo;
+  
     [SerializeField] int min, seg;
 
     [Header("estorbos")]
@@ -55,7 +55,7 @@ public class ControlTiempo : MonoBehaviour
         tiempoPasado += Time.deltaTime;
         int tempmin = Mathf.FloorToInt(tiempoPasado / 60);
         int tempseg = Mathf.FloorToInt(tiempoPasado % 60);
-        txt_contador_Tiempo.text = string.Format("{00:00}:{01:00}", tempmin, tempseg);
+        
 
         if (!eventoOcurrido1 && tiempoPasado >= tiempoParaEstorbo1)
         {
