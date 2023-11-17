@@ -8,6 +8,11 @@ TagManager:
   - Basket
   - Pelota
   - drumstick
+  - Tom
+  - lowtom
+  - snare
+  - hihat
+  - cymbal
   layers:
   - Default
   - TransparentFX
