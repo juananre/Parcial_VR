@@ -9,6 +9,9 @@ public class taskManager : MonoBehaviour
     public TextMeshProUGUI enunciadoHitsText;
     public TextMeshProUGUI enunciadoCajasText;
 
+    public GameObject primeraUI;
+    public GameObject urgenteUI;
+
     public AudioSource audioSource;
     public AudioClip alarmaAudio;
 
@@ -27,6 +30,7 @@ public class taskManager : MonoBehaviour
         if (cestasTachadas && hitsTachados && cajasTachadas)
         {            
             ReproducirAlarma();
+            CambiarUI();
         }
     }
 
@@ -38,5 +42,11 @@ public class taskManager : MonoBehaviour
             audioSource.clip = alarmaAudio;            
             audioSource.Play();
         }
+    }
+
+    void CambiarUI()
+    {
+        primeraUI.SetActive(false);
+        urgenteUI.SetActive(true);
     }
 }
