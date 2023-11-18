@@ -19,6 +19,7 @@ public class PlayAudioOnTriggerEnter : MonoBehaviour
 
     public static int totalHits = 0;
     public TextMeshProUGUI hitsText;
+    public TextMeshProUGUI tareaHitsText;
     void Start()
     {
         
@@ -27,9 +28,13 @@ public class PlayAudioOnTriggerEnter : MonoBehaviour
     void UpdateCounterText()
     {
         if (hitsText != null)
-        {
-            // Actualizar el texto con el valor actual de totalHits
-            hitsText.text = totalHits.ToString();
+        {            
+            hitsText.text = "Hits a la batería: " + totalHits.ToString();
+
+            if (totalHits >= 100)
+            {                
+                tareaHitsText.fontStyle = FontStyles.Strikethrough;
+            }
         }
     }
 
