@@ -12,6 +12,12 @@ public class taskManager : MonoBehaviour
     public GameObject primeraUI;
     public GameObject urgenteUI;
 
+    public GameObject objSnap;
+    public GameObject objSnap2;
+    public GameObject objSnap3;
+    public GameObject objSnap4;
+
+
     public AudioSource audioSource;
     public AudioClip alarmaAudio;
 
