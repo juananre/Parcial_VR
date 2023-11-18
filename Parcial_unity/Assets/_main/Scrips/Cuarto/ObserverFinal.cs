@@ -11,15 +11,15 @@ public class ObserverFinal : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
 
-        if (other.CompareTag("Tom"))
+        if (other.CompareTag("escritoro"))
         {
             escritoro.Invoke();   
         }
-        if (other.CompareTag("lowtom"))
+        if (other.CompareTag("espejo"))
         {
             espejo.Invoke();
         }
-        if (other.CompareTag("snare"))
+        if (other.CompareTag("cuadro"))
         {
             cuadro.Invoke();
         }

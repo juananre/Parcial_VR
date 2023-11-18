@@ -6,10 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class finalManager : MonoBehaviour
 {
+    [Header("Cambio de escena")]
+    [SerializeField] float TiempoParaOtraEscena = 3;
+
     [Header("txt")]
     [SerializeField] GameObject cuadroTxt;
     [SerializeField] GameObject espejoTxt;
     [SerializeField] GameObject EscritorioTxt;
+    [SerializeField] GameObject urgenteUI;
 
     [Header("elements colliders")]
     public GameObject ultimisUI;
@@ -22,40 +26,50 @@ public class finalManager : MonoBehaviour
     public GameObject escriLight;
     public GameObject espeLight;
 
-    private bool active = false;
-    private bool cuadroInteractuado = false;
-    private bool escriInteractuado = false;
-    private bool espeInteractuado = false;
+    [Header("audio")]
+    [SerializeField] GameObject musica;
 
+    private bool active = false;
+    private int cout=0;
 
     private void Update()
     {
-        
+        if (cout >= 3)
+        {
+            musica.SetActive(false);
+            StartCoroutine(EsperarYCargarEscenaFinal(TiempoParaOtraEscena));
+        }
     }
 
-    void esopejo()
+    public void esopejo()
     {
         espejoTxt.SetActive(true);
         espeLight.SetActive(true);
         espeColli.SetActive(false);
         ActivarUltimisUI();
+        urgenteUI.SetActive(false);
         active = true;
+        cout++;
     }
-    void cuadro()
+    public void cuadro()
     {
         cuadroTxt.SetActive(true);
         cuadroLight.SetActive(true);
         cuadroColli.SetActive(false);
         ActivarUltimisUI();
+        urgenteUI.SetActive(false);
         active = true;
+        cout++;
     }
-    void escritorio()
+    public void escritorio()
     {
         EscritorioTxt.SetActive(true);
         escriLight.SetActive(true);
         escriColli.SetActive(false);
+        urgenteUI.SetActive(false);
         ActivarUltimisUI();
         active = true;
+        cout++;   
     }
     void ActivarUltimisUI()
     {
@@ -64,6 +78,12 @@ public class finalManager : MonoBehaviour
             ultimisUI.SetActive(true);
         }
        
+    }
+
+    IEnumerator EsperarYCargarEscenaFinal(float tiempoEspera)
+    {
+        yield return new WaitForSeconds(tiempoEspera);
+        CargarEscenaFinal();
     }
 
     void CargarEscenaFinal()
