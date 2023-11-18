@@ -6116,7 +6116,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xBFQu\xE9 es lo que te hace sentir mejor cuando todo est\xE1 mal?\n"
+  m_text: "Reconecta con lo que te hace sentir mejor cuando todo est\xE1 mal?\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -19887,7 +19887,7 @@ GameObject:
   - component: {fileID: 718064639364817222}
   - component: {fileID: 5540804821428063143}
   - component: {fileID: 363609501}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
