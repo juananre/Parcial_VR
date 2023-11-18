@@ -15,6 +15,9 @@ public class taskManager : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip alarmaAudio;
 
+    public Light blue;
+    public Light red;
+
     void Update()
     {
         VerifTachado();
@@ -31,6 +34,7 @@ public class taskManager : MonoBehaviour
         {            
             ReproducirAlarma();
             CambiarUI();
+            Ilum();
         }
     }
 
@@ -48,5 +52,11 @@ public class taskManager : MonoBehaviour
     {
         primeraUI.SetActive(false);
         urgenteUI.SetActive(true);
+    }
+
+    void Ilum()
+    {
+        blue.enabled = false;
+        red.enabled = true;
     }
 }
