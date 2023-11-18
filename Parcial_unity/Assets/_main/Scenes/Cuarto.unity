@@ -18965,6 +18965,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8224212939589846729, guid: ef61245ce0258364c9bf424f72d2edf7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8224212939589846729, guid: ef61245ce0258364c9bf424f72d2edf7, type: 3}
       propertyPath: m_TagString
       value: espejo
       objectReference: {fileID: 0}
