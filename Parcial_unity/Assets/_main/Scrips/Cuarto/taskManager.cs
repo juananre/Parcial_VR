@@ -12,6 +12,11 @@ public class taskManager : MonoBehaviour
     public GameObject primeraUI;
     public GameObject urgenteUI;
 
+    public GameObject cuadroCollider;
+    public GameObject escritorioCollider;
+    public GameObject espejoCollider;
+
+
     public GameObject objSnap;
     public GameObject objSnap2;
     public GameObject objSnap3;
@@ -19,7 +24,7 @@ public class taskManager : MonoBehaviour
 
 
     public AudioSource audioSource;
-    public AudioClip alarmaAudio;
+    public AudioSource audioSourceAlarma;    
 
     public Light blue;
     public Light red;
@@ -41,6 +46,7 @@ public class taskManager : MonoBehaviour
             ReproducirAlarma();
             CambiarUI();
             Ilum();
+            PrenderFinal();
         }
     }
 
@@ -48,9 +54,9 @@ public class taskManager : MonoBehaviour
     {        
         if (audioSource != null)
         {
-            audioSource.Stop();            
-            audioSource.clip = alarmaAudio;            
-            audioSource.Play();
+            audioSource.Stop();
+            audioSourceAlarma.enabled = true;
+            audioSourceAlarma.Play();
         }
     }
 
@@ -61,8 +67,14 @@ public class taskManager : MonoBehaviour
     }
 
     void Ilum()
-    {
-        blue.enabled = false;
+    {        
         red.enabled = true;
+    }
+
+    void PrenderFinal()
+    {
+        cuadroCollider.SetActive(true);
+        escritorioCollider.SetActive(true);
+        espejoCollider.SetActive(true);
     }
 }
