@@ -34,17 +34,17 @@ public class finalManager : MonoBehaviour
 
     private void Update()
     {
-        print(cout);
+        
         if (cuadroTxt.activeInHierarchy && espejoTxt.activeInHierarchy && EscritorioTxt.activeInHierarchy)
         {
             musica.SetActive(false);
-            //CargarEscenaFinal();
+            StartCoroutine(EsperarYCargarEscenaFinal(TiempoParaOtraEscena));
         }
     }
 
     public void esopejo()
     {
-        cout++;
+        
         espejoTxt.SetActive(true);
         espeLight.SetActive(true);
         espeColli.SetActive(false);
@@ -55,7 +55,7 @@ public class finalManager : MonoBehaviour
     }
     public void cuadro()
     {
-        cout++;
+        
         cuadroTxt.SetActive(true);
         cuadroLight.SetActive(true);
         cuadroColli.SetActive(false);
@@ -66,7 +66,7 @@ public class finalManager : MonoBehaviour
     }
     public void escritorio()
     {
-        cout++;
+        
         EscritorioTxt.SetActive(true);
         escriLight.SetActive(true);
         escriColli.SetActive(false);
@@ -84,8 +84,12 @@ public class finalManager : MonoBehaviour
        
     }
 
-    
 
+    IEnumerator EsperarYCargarEscenaFinal(float tiempoEspera)
+    {
+        yield return new WaitForSeconds(tiempoEspera);
+        CargarEscenaFinal();
+    }
     void CargarEscenaFinal()
     {
         SceneManager.LoadScene("final");
