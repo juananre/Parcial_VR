@@ -25,6 +25,11 @@ public class ManagerPiezas : MonoBehaviour
     [SerializeField] GameObject lUZ, Bloqueo;
     [SerializeField] GameObject puerta;
 
+    [Header("audios")]
+    [SerializeField] AudioSource audioSource;
+    public AudioClip vallenatico;
+    [SerializeField] GameObject tensionMusic;
+
     void Start()
     {
         tiempoParaEstorbo1 = (min * 60 + seg) * EstorboPorcentaje1;
@@ -103,6 +108,8 @@ public class ManagerPiezas : MonoBehaviour
             Bloqueo.SetActive(false);
             pusartiempo();
             puerta.SetActive(false);
+            audioSource.PlayOneShot(vallenatico);
+            tensionMusic.SetActive(false);
         }
     }
 }
