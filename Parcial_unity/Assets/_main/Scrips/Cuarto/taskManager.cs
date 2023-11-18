@@ -5,29 +5,35 @@ using UnityEngine;
 
 public class taskManager : MonoBehaviour
 {
+    [Header("txt")]
     public TextMeshProUGUI enunciadoCestasText;
     public TextMeshProUGUI enunciadoHitsText;
     public TextMeshProUGUI enunciadoCajasText;
 
+
+    [Header("ui")]
     public GameObject primeraUI;
     public GameObject urgenteUI;
 
+    [Header("final")]
     public GameObject cuadroCollider;
     public GameObject escritorioCollider;
     public GameObject espejoCollider;
 
-
+    [Header("snapzones")]
     public GameObject objSnap;
     public GameObject objSnap2;
     public GameObject objSnap3;
     public GameObject objSnap4;
 
+    [Header("audios")]
+    [SerializeField] AudioSource audioSource;
+    public AudioClip Alarma;
+    [SerializeField] GameObject lolli;
 
-    public AudioSource audioSource;
-    public AudioSource audioSourceAlarma;    
-
-    public Light blue;
-    public Light red;
+    [Header("luces")]
+    [SerializeField] GameObject Lired;
+    [SerializeField] GameObject LiBlue;
 
     void Update()
     {
@@ -52,12 +58,8 @@ public class taskManager : MonoBehaviour
 
     void ReproducirAlarma()
     {        
-        if (audioSource != null)
-        {
-            audioSource.Stop();
-            audioSourceAlarma.enabled = true;
-            audioSourceAlarma.Play();
-        }
+       audioSource.PlayOneShot(Alarma);
+       lolli.SetActive(false);
     }
 
     void CambiarUI()
@@ -68,7 +70,8 @@ public class taskManager : MonoBehaviour
 
     void Ilum()
     {        
-        red.enabled = true;
+        LiBlue.SetActive(false);
+        Lired.SetActive(true);
     }
 
     void PrenderFinal()

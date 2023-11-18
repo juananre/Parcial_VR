@@ -6,61 +6,64 @@ using UnityEngine.SceneManagement;
 
 public class finalManager : MonoBehaviour
 {
-    public TextMeshProUGUI amanText;
-    public TextMeshProUGUI tuText;
-    public TextMeshProUGUI hacesText;
+    [Header("txt")]
+    [SerializeField] GameObject cuadroTxt;
+    [SerializeField] GameObject espejoTxt;
+    [SerializeField] GameObject EscritorioTxt;
 
+    [Header("elements colliders")]
     public GameObject ultimisUI;
     public GameObject cuadroColli;
     public GameObject escriColli;
     public GameObject espeColli;
 
+    [Header("luces")]
     public GameObject cuadroLight;
     public GameObject escriLight;
     public GameObject espeLight;
 
+    private bool active = false;
     private bool cuadroInteractuado = false;
     private bool escriInteractuado = false;
     private bool espeInteractuado = false;
 
-    void OnTriggerEnter(Collider other)
-    {
-        // Verificar si la colisión es de las mano
-        if (other.gameObject.layer == LayerMask.NameToLayer("Manos"))
-        {
-            if (other.gameObject == cuadroColli && !cuadroInteractuado)
-            {
-                amanText.gameObject.SetActive(true);
-                cuadroLight.SetActive(true);
-                cuadroInteractuado = true;
-                ActivarUltimisUI();
-            }
-            else if (other.gameObject == escriColli && !escriInteractuado)
-            {
-                hacesText.gameObject.SetActive(true);
-                escriLight.SetActive(true);
-                escriInteractuado = true;
-                ActivarUltimisUI();
-            }
-            else if (other.gameObject == espeColli && !espeInteractuado)
-            {
-                tuText.gameObject.SetActive(true);
-                espeLight.SetActive(true);
-                espeInteractuado = true;
-                ActivarUltimisUI();
-            }
 
-            //Si se activan los 3 textos
-            if (cuadroInteractuado && escriInteractuado && espeInteractuado)
-            {
-                CargarEscenaFinal();
-            }
-        }
+    private void Update()
+    {
+        
     }
 
+    void esopejo()
+    {
+        espejoTxt.SetActive(true);
+        espeLight.SetActive(true);
+        espeColli.SetActive(false);
+        ActivarUltimisUI();
+        active = true;
+    }
+    void cuadro()
+    {
+        cuadroTxt.SetActive(true);
+        cuadroLight.SetActive(true);
+        cuadroColli.SetActive(false);
+        ActivarUltimisUI();
+        active = true;
+    }
+    void escritorio()
+    {
+        EscritorioTxt.SetActive(true);
+        escriLight.SetActive(true);
+        escriColli.SetActive(false);
+        ActivarUltimisUI();
+        active = true;
+    }
     void ActivarUltimisUI()
     {
-        ultimisUI.SetActive(true);
+        if (active==false)
+        {
+            ultimisUI.SetActive(true);
+        }
+       
     }
 
     void CargarEscenaFinal()
