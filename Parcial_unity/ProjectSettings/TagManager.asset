@@ -13,6 +13,7 @@ TagManager:
   - snare
   - hihat
   - cymbal
+  - caja
   layers:
   - Default
   - TransparentFX
