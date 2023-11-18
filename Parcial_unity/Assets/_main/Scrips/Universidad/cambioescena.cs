@@ -21,7 +21,7 @@ public class cambioescena : MonoBehaviour
     }
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("player"))
+        if (other.CompareTag("Player"))
         {
            SceneManager.LoadScene(scena);
         }
