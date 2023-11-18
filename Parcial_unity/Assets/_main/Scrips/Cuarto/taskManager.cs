@@ -7,22 +7,36 @@ public class taskManager : MonoBehaviour
 {
     public TextMeshProUGUI enunciadoCestasText;
     public TextMeshProUGUI enunciadoHitsText;
+    public TextMeshProUGUI enunciadoCajasText;
+
+    public AudioSource audioSource;
+    public AudioClip alarmaAudio;
 
     void Update()
     {
-        VerificarCondicionesTachado();
+        VerifTachado();
     }
 
-    void VerificarCondicionesTachado()
-    {        
-        if (enunciadoCestasText != null && enunciadoCestasText.fontStyle == FontStyles.Strikethrough)
+    void VerifTachado()
+    {
+        bool cestasTachadas = enunciadoCestasText != null && enunciadoCestasText.fontStyle == FontStyles.Strikethrough;
+        bool hitsTachados = enunciadoHitsText != null && enunciadoHitsText.fontStyle == FontStyles.Strikethrough;
+        bool cajasTachadas = enunciadoCajasText != null && enunciadoCajasText.fontStyle == FontStyles.Strikethrough;
+
+        // Ya cumplió las tres tareas
+        if (cestasTachadas && hitsTachados && cajasTachadas)
         {            
-            Debug.Log("El texto de las cestas está tachado");
+            ReproducirAlarma();
         }
-                
-        if (enunciadoHitsText != null && enunciadoHitsText.fontStyle == FontStyles.Strikethrough)
-        {            
-            Debug.Log("El texto de los hits está tachado");
+    }
+
+    void ReproducirAlarma()
+    {        
+        if (audioSource != null)
+        {
+            audioSource.Stop();            
+            audioSource.clip = alarmaAudio;            
+            audioSource.Play();
         }
     }
 }
